@@ -1,0 +1,9 @@
+/.env
+/gdb.setup
+/libs/
+/obj/
+/libs/
+/prebuilt/
+/temp/
+jni/vendor/libyuv/libs/
+jni/vendor/libyuv/obj/

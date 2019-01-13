@@ -1,0 +1,12 @@
+[submodule "libjpeg-turbo"]
+	path = jni/vendor/libjpeg-turbo
+	url = https://github.com/openstf/android-libjpeg-turbo.git
+[submodule "web-player/h264-live-player"]
+	path = web-player/h264-live-player
+	url = https://github.com/131/h264-live-player
+[submodule "web-player/Broadway"]
+	path = web-player/Broadway
+	url = https://github.com/mbebenita/Broadway.git
+[submodule "web-player/BroadwayStream"]
+	path = web-player/BroadwayStream
+	url = https://github.com/soliton4/BroadwayStream.git
