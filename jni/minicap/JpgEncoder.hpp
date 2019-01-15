@@ -58,15 +58,16 @@ struct YuvFrame {
 class YUVEncoder {
 public:
   YUVEncoder(uint32 fourcc);
+
   ~YUVEncoder();
 
-  bool
+  bool 
   reserveData(uint32_t width, uint32_t height, float scale);
 
-  bool 
+  bool
   encode(Minicap::Frame *frame);
 
-  int
+  int 
   getEncodedSize();
 
   unsigned char*
@@ -82,7 +83,8 @@ public:
     size_t size;
   };
   */
-  int trgb2yuv(Minicap::Frame *frame, YuvFrame *yuvFrame, YuvFrame *scaledFrame, YuvFrame *nvFrame);
+  int 
+  trgb2yuv(Minicap::Frame *frame, YuvFrame *yuvFrame, YuvFrame *scaledFrame, YuvFrame *nvFrame);
 
   uint32 fourcc;
   tjhandle handle;
@@ -90,6 +92,7 @@ public:
   YuvFrame scaledFrame;
   YuvFrame nvFrame;
   unsigned int count;
+
 };
 
 

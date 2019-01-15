@@ -542,11 +542,11 @@ main(int argc, char* argv[]) {
   while (!gWaiter.isStopped() && (fd = server.accept()) > 0) {
     MCINFO("New client connection");
 
-	/*
+	
     if (pumps(fd, banner, BANNER_SIZE) < 0) {
       close(fd);
       continue;
-    }*/
+    }
 
     int pending, err;
     while (!gWaiter.isStopped() && (pending = gWaiter.waitForFrame()) > 0) {
@@ -597,10 +597,17 @@ main(int argc, char* argv[]) {
       size_t size = encoder.getEncodedSize();
 
       //pumpf(STDOUT_FILENO, data, size);
-
-      if (pumps(fd, data, size /*+ 4*/) < 0) {
+	  unsigned char* len = new unsigned char[4];
+	  putUInt32LE(len,size);
+	  
+	  if(pumps(fd,len,4) < 0){
+		break;
+	  }
+	  
+	  if(pumps(fd, data, size/*+ 4*/) < 0) {
         break;
       }
+	   
 
       // This will call onFrameAvailable() on older devices, so we have
       // to do it here or the loop will stop.

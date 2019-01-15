@@ -16,7 +16,7 @@ wss.on('connection', function(ws) {
   console.info('Got a client')
 
   var stream = net.connect({
-	host:"192.168.8.210",
+	host:"192.168.8.204",
     port: 9999
   })
 

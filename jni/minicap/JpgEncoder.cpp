@@ -31,6 +31,7 @@ YUVEncoder::YUVEncoder(uint32 fourcc) :
 	MCINFO("YUVEncoder created with corlor format %d", fourcc);
 }
 
+
 YUVEncoder::~YUVEncoder() {
 	tjFree(rawFrame.data);
 	tjFree(scaledFrame.data);
@@ -410,7 +411,7 @@ JpgEncoder::getEncodedSize() {
 
 unsigned char*
 JpgEncoder::getEncodedData() {
-	return mEncodedData + mPrePadding;
+	return mEncodedData;
 }
 
 //TODO修正缓冲区大小为图片缩放后重新计算得到的缓冲区大小
